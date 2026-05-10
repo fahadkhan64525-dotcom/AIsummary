@@ -9,4 +9,5 @@ apps/api/.env
 apps/web/.env.local
 uploads
 *.log
+*.tsbuildinfo
 AIsammary_Report_.pdf
