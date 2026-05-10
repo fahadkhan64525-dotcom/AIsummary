@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: 246 247 243;
+  --panel: 255 255 255;
+  --card: 255 255 255;
+  --text: 18 24 38;
+  --muted: 93 107 131;
+  --stroke: 219 226 238;
+  --accent: 15 118 110;
+  --accent-soft: 220 252 231;
+  --accent-alt: 234 88 12;
+}
+
+.dark {
+  --bg: 11 16 28;
+  --panel: 18 25 39;
+  --card: 23 31 48;
+  --text: 240 244 255;
+  --muted: 157 168 194;
+  --stroke: 51 65 85;
+  --accent: 45 212 191;
+  --accent-soft: 20 83 45;
+  --accent-alt: 251 146 60;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: rgb(var(--text));
+  background:
+    radial-gradient(circle at top left, rgba(16, 185, 129, 0.18), transparent 28%),
+    radial-gradient(circle at right top, rgba(59, 130, 246, 0.14), transparent 25%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 30%),
+    rgb(var(--bg));
+  min-height: 100vh;
+  font-family: var(--font-body), sans-serif;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(148, 163, 184, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(circle at center, black 35%, transparent 82%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+::selection {
+  background: rgba(16, 185, 129, 0.2);
+}
+
+@layer components {
+  .surface {
+    @apply rounded-[28px] border border-stroke/70 bg-panel/80 shadow-float backdrop-blur-xl;
+  }
+
+  .surface-soft {
+    @apply rounded-[24px] border border-stroke/60 bg-card/70 backdrop-blur-xl;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accentSoft/60 px-3 py-1 text-xs font-semibold uppercase tracking-[0.24em] text-accent;
+  }
+
+  .label-chip {
+    @apply inline-flex items-center rounded-full border border-stroke bg-white/40 px-3 py-1 text-xs font-medium text-muted dark:bg-white/5;
+  }
+}
+

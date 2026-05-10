@@ -1,0 +1,19 @@
+{
+  "name": "ai-text-summarization-platform",
+  "version": "1.0.0",
+  "private": true,
+  "packageManager": "npm@11.6.2",
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev --workspace @ai-summary/api\" \"npm run dev --workspace @ai-summary/web\"",
+    "build": "npm run build --workspace @ai-summary/api && npm run build --workspace @ai-summary/web",
+    "lint": "npm run lint --workspace @ai-summary/api && npm run lint --workspace @ai-summary/web"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "typescript": "^5.8.3"
+  }
+}
+

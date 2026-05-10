@@ -1,0 +1,12 @@
+node_modules
+.next
+dist
+coverage
+.env
+.env.local
+.turbo
+apps/api/.env
+apps/web/.env.local
+uploads
+*.log
+AIsammary_Report_.pdf
