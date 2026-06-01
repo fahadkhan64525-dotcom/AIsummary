@@ -1,0 +1,34 @@
+services:
+  - type: web
+    name: ai-summary-api
+    runtime: node
+    plan: free
+    rootDir: .
+    buildFilter:
+      paths:
+        - apps/api/**
+        - package.json
+        - package-lock.json
+        - tsconfig.base.json
+        - render.yaml
+    buildCommand: npm install && npm run build --workspace @ai-summary/api
+    startCommand: npm run start --workspace @ai-summary/api
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: CLIENT_URL
+        sync: false
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: OPENAI_MODEL
+        value: gpt-5
+      - key: JWT_SECRET
+        generateValue: true
+      - key: MONGODB_URI
+        sync: false
+      - key: AUTH_COOKIE_NAME
+        value: ai_summary_session
+      - key: MAX_SOURCE_CHARS
+        value: 120000

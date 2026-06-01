@@ -67,9 +67,9 @@ apps/api (Express REST API)
 
 ## Environment setup
 
-1. Copy `.env.example` values into:
-   - `apps/api/.env`
-   - `apps/web/.env.local`
+1. Copy the app-specific example files:
+   - `apps/api/.env.example` -> `apps/api/.env`
+   - `apps/web/.env.local.example` -> `apps/web/.env.local`
 2. Set `OPENAI_API_KEY` to use OpenAI-powered summarization.
 3. Set `MONGODB_URI` to enable persistent auth/history storage, for example:
    `mongodb://localhost:27017/ai-summary`
@@ -80,6 +80,8 @@ apps/api (Express REST API)
 npm install
 npm run dev
 ```
+
+Recommended Node.js version for local and hosted builds: `22.x`
 
 Default local URLs:
 
@@ -150,6 +152,7 @@ Option 1: Vercel + Render/Railway + MongoDB Atlas
 6. Start commands:
    - Web: `npm run start --workspace @ai-summary/web`
    - API: `npm run start --workspace @ai-summary/api`
+7. If using Render, you can also start from the included `render.yaml` blueprint for the API service.
 
 Option 2: Single VPS with Nginx
 

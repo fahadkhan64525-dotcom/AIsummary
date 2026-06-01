@@ -12,6 +12,8 @@
   --accent: 15 118 110;
   --accent-soft: 220 252 231;
   --accent-alt: 234 88 12;
+  --font-body: "Aptos", "Segoe UI Variable Text", "Segoe UI", sans-serif;
+  --font-display: "Bahnschrift", "Trebuchet MS", "Arial Narrow", sans-serif;
 }
 
 .dark {
@@ -75,4 +77,3 @@ body::before {
     @apply inline-flex items-center rounded-full border border-stroke bg-white/40 px-3 py-1 text-xs font-medium text-muted dark:bg-white/5;
   }
 }
-

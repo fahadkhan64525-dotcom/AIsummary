@@ -1,6 +1,5 @@
 "use client";
 
-import { jsPDF } from "jspdf";
 import { motion } from "framer-motion";
 import { Copy, Download, FileText, Languages, Share2, Sparkles } from "lucide-react";
 import { toast } from "sonner";
@@ -11,7 +10,8 @@ interface ResultPanelProps {
   record: SummaryRecord | null;
 }
 
-function exportToPdf(record: SummaryRecord) {
+async function exportToPdf(record: SummaryRecord) {
+  const { jsPDF } = await import("jspdf");
   const document = new jsPDF({
     unit: "pt",
     format: "a4"
@@ -101,7 +101,7 @@ export function ResultPanel({ record }: ResultPanelProps) {
             </button>
             <button
               type="button"
-              onClick={() => exportToPdf(record)}
+              onClick={() => void exportToPdf(record)}
               className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-stroke bg-bg/35 text-muted transition hover:border-accent/40 hover:text-accent"
               aria-label="Export as PDF"
             >
@@ -206,4 +206,3 @@ export function ResultPanel({ record }: ResultPanelProps) {
     </motion.section>
   );
 }
-
