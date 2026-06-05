@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "cp ../../tsconfig.base.json tsconfig.base.json",
     "build": "next build",
     "start": "next start",
     "lint": "tsc --noEmit"
