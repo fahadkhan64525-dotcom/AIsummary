@@ -4,7 +4,7 @@ import { Providers } from "./providers";
 
 export const metadata: Metadata = {
   title: "AI Text Summarization Platform",
-  description: "Startup-grade AI summarization for text, PDFs, multilingual briefs, and document chat."
+  description: "Startup-grade AI summarization for text, PDFs, multilingual briefs, and document chat.(Fahad)"
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
