@@ -66,7 +66,7 @@ export function SummaryForm({ onComplete, onOpenAuth, isAuthenticated }: Summary
     >
       <div className="flex flex-wrap items-start justify-between gap-4">
         <div>
-          <p className="eyebrow">Summarization Studio</p>
+          <p className="eyebrow">Summarization Studio...Fahad</p>
           <h2 className="mt-4 font-display text-3xl font-semibold leading-tight md:text-[2rem]">
             Turn raw documents into clear, share-ready intelligence
           </h2>
