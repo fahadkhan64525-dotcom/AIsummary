@@ -3,7 +3,7 @@ import "./globals.css";
 import { Providers } from "./providers";
 
 export const metadata: Metadata = {
-  title: "AI Text Summarization Platform..(Fahad)",
+  title: "AI Text Summarization Platform)",
   description: "Startup-grade AI summarization for text, PDFs, multilingual briefs, and document chat.(Fahad)"
 };
 
